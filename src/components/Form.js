@@ -32,7 +32,7 @@ export default class Form extends Component {
   render() {
     return (
       <div className="card">
-        <div className="card-block p-2">
+        <div className="card-block pt-3">
           <h3>What's your name, sailor?</h3>
           <form onSubmit={this.handleFormSubmit}>
             <div className="form-group">

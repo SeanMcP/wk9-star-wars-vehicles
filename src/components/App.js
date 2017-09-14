@@ -48,7 +48,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App mx-5">
         <Jumbotron />
         <Form />
         <Vehicles />
