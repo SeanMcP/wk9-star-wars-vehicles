@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import '../styles/App.css';
 
 import Jumbotron from './Jumbotron.js'
+import Form from "./Form.js"
 import Vehicles from './Vehicles.js'
 
 class App extends Component {
@@ -17,41 +18,6 @@ class App extends Component {
       'value': '',
       'pilot': ''
     }
-
-    // FORM: HANDLE INPUT CHANGES
-    // handleNameChange below:
-    // See form lesson for details.
-    // Enter your code below:
-    this.handleNameChange = this.handleNameChange.bind(this)
-    this.handleFormSubmit = this.handleFormSubmit.bind(this)
-  }
-
-  handleNameChange(event){
-    this.setState({
-      name: event.target.value
-    })
-  }
-
-  handleFormSubmit(event) {
-    event.preventDefault()
-    // const newComment = {
-    //   commentText: this.state.commentText,
-    //   name: this.state.name
-    // }
-    // const comments = this.state.comments;
-    // comments.push(newComment)
-
-    this.setState({ pilot: this.state.name })
-  }
-
-  componentWillMount() {
-    fetch('https://swapi.co/api/vehicles/')
-    .then(res => res.json() )
-    .then(data => {
-      console.log("data.results from componentWillMount fetch:\n", data.results)
-      this.setState({ vehicles: data.results })
-      console.log('this.state.vehicles:\n', this.state.vehicles)
-    })
   }
 
 
@@ -84,7 +50,7 @@ class App extends Component {
     return (
       <div className="App">
         <Jumbotron />
-
+        <Form />
         <Vehicles />
         {/*
         The App component needs the following:
